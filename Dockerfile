@@ -69,11 +69,6 @@ RUN cd /opt && \
     wget --no-check-certificate https://github.com/francois-a/rnaseqc/releases/download/v1.1.9/RNA-SeQC_1.1.9.zip && \
     unzip RNA-SeQC_1.1.9.zip -d RNA-SeQC_1.1.9 && rm RNA-SeQC_1.1.9.zip
 
-# bamsync
-COPY bamsync /opt/bamsync
-RUN cd /opt/bamsync && make
-ENV PATH /opt/bamsync:$PATH
-
 # python modules
 RUN pip3 install --upgrade pip && pip3 install tables pandas feather-format
 

@@ -6,8 +6,8 @@ RUN apt-get update && apt-get install -y software-properties-common && add-apt-r
     apt-get update && apt-get install -y \
         build-essential \
         cmake \
-        bowtie
-        curl \
+        bowtie \
+	curl \
         libboost-all-dev \
         libbz2-dev \
         libcurl3-dev \

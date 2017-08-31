@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y software-properties-common && add-apt-r
         libssl-dev \
         openjdk-7-jdk \
         openjdk-8-jdk \
-        python3 \
-        python3-pip \
+        python2.7 \
+        python-pip \
         unzip \
         vim-common \
         wget \
@@ -70,7 +70,7 @@ RUN cd /opt && \
     unzip RNA-SeQC_1.1.9.zip -d RNA-SeQC_1.1.9 && rm RNA-SeQC_1.1.9.zip
 
 # python modules
-RUN pip3 install --upgrade pip && pip3 install tables pandas feather-format pysam
+RUN pip2.7 install --upgrade pip && pip2.7 install tables pandas feather-format pysam==0.7.7
 #RUN easy_install fisher
 
 # kallisto v0.43.1

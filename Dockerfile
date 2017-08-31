@@ -71,7 +71,7 @@ RUN cd /opt && \
 
 # python modules
 RUN pip3 install --upgrade pip && pip3 install tables pandas feather-format pysam
-RUN easy_install fisher
+#RUN easy_install fisher
 
 # kallisto v0.43.1
 RUN cd /opt && \

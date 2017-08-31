@@ -796,14 +796,16 @@ dicregions=dict(rrefs.items())
 chrs=[x for x in dicregions.keys() if x not in nochrs]
 sys.stderr.write('Analysis on %i regions.\n' %(len(chrs)))
 
-if infolder!='': outfolder=os.path.join(outfolder_,'denovo_%s_%s' %(infolder,pid))
-else: outfolder=os.path.join(outfolder_,'denovo_%s' %(pid))
+#if infolder!='': outfolder=os.path.join(outfolder_,'denovo_%s_%s' %(infolder,pid))
+#else: outfolder=os.path.join(outfolder_,'denovo_%s' %(pid))
+if infolder!='': outfolder=os.path.join(outfolder_,'denovo_%s' %(infolder))
+else: outfolder=os.path.join(outfolder_,'denovo')
 if not os.path.exists(outfolder):
 	splitfolder=os.path.split(outfolder)
 	if not os.path.exists(splitfolder[0]): os.mkdir(splitfolder[0])
 	os.mkdir(outfolder)	
-outtable=os.path.join(outfolder,'outTable_%s' %(pid))
-outdisto=os.path.join(outfolder,'outSubs_%s' %(pid))
+outtable=os.path.join(outfolder,'outTable')
+outdisto=os.path.join(outfolder,'outSubs')
 #write command line and input parameters
 f=open(os.path.join(outfolder,'parameters.txt'),'w')
 f.writelines(params)
@@ -1073,8 +1075,8 @@ sys.stderr.write('Merging Tables.\n')
 o=open(outtable,'w')
 o.write(head)
 for i in chrs:
-	tabfile=os.path.join(outfolder,'outTable_%s_%s' %(i,pid))
-	intabfile=os.path.join(outfolder,'table_%s_%s' %(i,pid))
+	tabfile=os.path.join(outfolder,'outTable_%s' %(i))
+	intabfile=os.path.join(outfolder,'table_%s' %(i))
 	if os.path.exists(tabfile):
 		f=open(tabfile)
 		for j in f: o.write(j)
@@ -1085,7 +1087,7 @@ o.close()
 
 if sigsites:
 	sys.stderr.write('Selecting significant sites.\n')
-	outsig=os.path.join(outfolder,'outTableSig_%s' %(pid))
+	outsig=os.path.join(outfolder,'outTableSig')
 	f=open(outtable)
 	o=open(outsig,'w')
 	o.write(head)

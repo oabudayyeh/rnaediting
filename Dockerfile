@@ -70,7 +70,8 @@ RUN cd /opt && \
     unzip RNA-SeQC_1.1.9.zip -d RNA-SeQC_1.1.9 && rm RNA-SeQC_1.1.9.zip
 
 # python modules
-RUN pip3 install --upgrade pip && pip3 install tables pandas feather-format
+RUN pip3 install --upgrade pip && pip3 install tables pandas feather-format pysam
+RUN easy_install fisher
 
 # kallisto v0.43.1
 RUN cd /opt && \

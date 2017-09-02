@@ -18,7 +18,8 @@ RUN apt-get update && apt-get install -y software-properties-common && add-apt-r
         openjdk-8-jdk \
         python2.7 \
         python-pip \
-        unzip \
+        seqtk \
+	unzip \
         vim-common \
         wget \
         zlib1g-dev \

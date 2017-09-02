@@ -12,4 +12,5 @@ then
 	seqtk sample -s100 $2 15000000 > $2.sub
 	mv $1.sub $1
 	mv $2.sub $2
+	echo "subsample complete"
 fi

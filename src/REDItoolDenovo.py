@@ -1096,7 +1096,12 @@ if sigsites:
         if i.strip()=='': continue
         l=(i.strip()).split('\t')
         if l[7]=='-': continue
-        if l[7] not in usubs: continue
+        #this is the original line
+        #if l[7] not in usubs: continue
+
+        #this is the new line I added so AG is still found
+        le = l[7].split(' ')[0]
+        if le not in usubs: continue
         pp=float(l[9])
         allv.append((pp,i))
     if test=='bh': rr=get_bh(allv,sval,len(allv))

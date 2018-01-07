@@ -28,6 +28,7 @@ import gzip
 
 version='1.0'
 pid=str(os.getpid()+random.randint(0,999999999))
+pid = str(0)
 
 def usage():
 	print """
